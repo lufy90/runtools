@@ -1,0 +1,22 @@
+#!/bin/bash
+# filename: netperf.sh
+# Author: lufei
+# Date: 20200109 16:33:42
+
+TOOLNAME=netperf
+VERSION=
+SITE=
+URL=http://autoserver:8000/rpmbuild/SOURCES/netperf-2.7.0.tar.gz
+TARBALL=netperf-2.7.0.tar.gz
+FOLDER=netperf-2.7.0
+PATCH=
+MD5SUFFIX=md5
+TARGET=
+
+
+UNTARCMD=
+INSTALLCMD="cd $FOLDER; ./configure; make && make install"
+RESULTS=
+RUNCMD1=
+RUNCMD2=
+RUNCMD3=

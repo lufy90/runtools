@@ -1,0 +1,36 @@
+diff -ruN lmbench-3.0-a9/scripts/config-run lmbench-3.0-a9-new/scripts/config-run
+--- lmbench-3.0-a9/scripts/config-run	2006-11-27 04:11:04.000000000 +0800
++++ lmbench-3.0-a9-new/scripts/config-run	2020-01-19 09:28:25.888249674 +0800
+@@ -175,6 +175,7 @@
+ 		fi
+ 	fi
+ fi
++MB=4096
+ if [ X$MB = X ]
+ then	$ECHON "Probing system for available memory: $ECHOC"
+ 	MB=`../bin/$OS/memsize 4096`
+@@ -657,6 +658,7 @@
+ 
+ echo $ECHON "Status output file [default /dev/tty]: $ECHOC"
+ read OUTPUT
++OUTPUT=/dev/sdtout
+ if [ "X$OUTPUT" = X ]
+ then	OUTPUT=/dev/tty;
+ fi
+@@ -679,6 +681,7 @@
+ 
+ echo $ECHON "Mail results [default yes]: $ECHOC"
+ read MAIL
++MAIL=no
+ case $MAIL in 
+     [Nn]*)	MAIL=no
+ 		echo OK, no results mailed.
+diff -ruN lmbench-3.0-a9/scripts/os lmbench-3.0-a9-new/scripts/os
+--- lmbench-3.0-a9/scripts/os	2006-06-28 00:27:19.000000000 +0800
++++ lmbench-3.0-a9-new/scripts/os	2020-01-19 09:28:25.896249759 +0800
+@@ -17,4 +17,5 @@
+     then	OS=`../../scripts/gnu-os | sed s/unknown-//`
+     fi
+ fi
++OS=aarch64
+ echo $OS
