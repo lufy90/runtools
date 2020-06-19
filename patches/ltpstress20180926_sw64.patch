@@ -1,0 +1,12 @@
+diff -ru ltp-20180926/include/lapi/rt_sigaction.h ltp-20180926.1/include/lapi/rt_sigaction.h
+--- ltp-20180926/include/lapi/rt_sigaction.h	2018-09-26 16:23:37.000000000 +0800
++++ ltp-20180926.1/include/lapi/rt_sigaction.h	2020-06-18 09:50:31.163433539 +0800
+@@ -49,7 +49,7 @@
+ #endif
+ 
+ /* This macro marks if (struct sigaction) has .sa_restorer member */
+-#if !defined(__ia64__) && !defined(__alpha__) && !defined(__hppa__) && !defined(__mips__)
++#if !defined(__ia64__) && !defined(__alpha__) && !defined(__hppa__) && !defined(__mips__) && !defined(__sw_64__)
+ # define HAVE_SA_RESTORER
+ #endif
+ 
